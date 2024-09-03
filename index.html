@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaninApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">PaninApp</h1>
+        <h2 class="subtitle">Ordina dal paninaro</h2>
+        <div class="card" id="orderForm">
+            <div class="input-field">
+                <input type="text" id="className" placeholder=" " required>
+                <label for="className">Classe</label>
+            </div>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            
+            <!-- Modifica la barra di ricerca per i prodotti -->
+            <div class="input-field">
+                <input type="text" id="productSearch" placeholder=" ">
+                <label for="productSearch">Cerca un prodotto</label>
+            </div>
+            
+            <div class="content-wrapper">
+                <div id="categories"></div>
+                <div class="main-content">
+                    <div id="productGrid"></div>
+                </div>
+            </div>
+            <button class="btn" id="sendOrder">Invia Ordine</button>
+        </div>
+        
+        <!-- Aggiungi il nuovo popup di benvenuto -->
+        <div id="welcomePopupOverlay" class="popup-overlay"></div>
+        <div id="welcomePopup" class="popup">
+            <div class="popup-content">
+                <h2>Benvenuto in PaninApp</h2>
+                <p>Da qui puoi ordinare la tua merenda dal paninaro in maniera semplice e veloce</p>
+                <button class="close-btn" onclick="closeWelcomePopup()">Inzia ordine</button>
+            </div>
+        </div>
+        
+        <div class="card confirmation-screen" id="confirmationScreen" style="display: none;">
+            <span class="material-icons success-icon">check_circle</span>
+            <h2>Ordine confermato</h2>
+            <p>Poco prima della ricreazione recati dal paninaro e ritira il tuo ordine comunicandogli la classe</p>
+            <p id="orderTotal" class="order-total">Totale: €0.00</p>
+            <button class="btn" id="sendWhatsApp">INVIA ORDINE</button>
+        </div>
+        <p class="developer-credit">(v1.0) Sviluppato da <a href="#" id="developerLink">Alessio D'Urbano</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
